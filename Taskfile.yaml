@@ -1,0 +1,11 @@
+version: 3
+
+tasks:
+  build:
+    cmds:
+      - go mod download
+      - mkdir -p bin
+      - go build -o bin/ ./...
+  run:
+    cmds:
+      - go run main.go

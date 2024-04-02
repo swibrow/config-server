@@ -1,0 +1,32 @@
+{
+  "repositories": [
+    {
+      "name": "example-repo",
+      "url": "https://github.com/exampleOrg/example-repo",
+      "apps": [
+        {
+          "appName": "appone",
+          "environments": [
+            {
+              "name": "production",
+              "awsAccountId": "123456789012",
+              "iamRoles": [
+                {
+                  "roleName": "AppOneProdRole",
+                  "roleArn": "arn:aws:iam::aws:role/AppOneProdRole"
+                }
+              ],
+              "terraformBackend": {
+                "s3": {
+                  "bucket": "tf-state-123456789012",
+                  "key": "appone.tfstate",
+                  "region": "eu-central-1"
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
